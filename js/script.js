@@ -59,6 +59,14 @@ $(document).ready(function() {
 					}
 				);
 				
+				//Pulse
+				$('#isConnected').addClass( "pulse animated" );
+				$('#isConnected').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+					function(){
+						$('#isConnected').removeClass( "pulse animated" );
+					}
+				);
+				
 				//Connection Icon
 				$('#searchingIcon').addClass( "bounceIn animated" );	
 				$('#searchingIcon').css("opacity", "1");
@@ -79,6 +87,15 @@ $(document).ready(function() {
 						$('#connectionPanel').removeClass( "bounceOutUp animated" );		
 					}
 				);
+				
+				//Pulse
+				$('#isConnected').addClass( "pulse animated" );
+				$('#isConnected').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+					function(){
+						$('#isConnected').removeClass( "pulse animated" );
+					}
+				);
+				
 				//Connection Icon
 				$('#searchingIcon').addClass( "bounceOut animated" );
 				console.log(dropDown);
