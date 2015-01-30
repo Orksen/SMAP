@@ -6,7 +6,9 @@ $(document).ready(function() {
 	function circleRed(){
 		if(connectionStatus == "Disconnected")
 		{
-			$('#isConnected').css('background-color', 'red');
+			$('#isConnected').css('background-color', 'blue');
+			
+
 		}
 	}
 	function circleGreen(){
@@ -67,18 +69,28 @@ $(document).ready(function() {
 	$( "#isConnected" ).on('tap',
 		function(){
 			if(dropDown == false){
+				
+				//BT Panel
 				$('#connectionPanel').addClass( "bounceInDown animated" );	
 				$('#connectionPanel').css("opacity", "1");
-
-				console.log(dropDown);
-				
 				$('#connectionPanel').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
 					function(){
 						$('#connectionPanel').removeClass( "bounceInDown animated" );
 					}
 				);
+				
+				//Connection Icon
+				$('#searchingIcon').addClass( "bounceIn animated" );	
+				$('#searchingIcon').css("opacity", "1");
+				$('#searchingIcon').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+					function(){
+						$('#searchingIcon').removeClass( "bounceIn animated" );
+					}
+				);
 			};
 			if(dropDown == true){
+				
+				//BT Panel
 				$('#connectionPanel').addClass( "bounceOutUp animated" );
 				console.log(dropDown);
 				$('#connectionPanel').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
@@ -87,6 +99,19 @@ $(document).ready(function() {
 						$('#connectionPanel').removeClass( "bounceOutUp animated" );		
 					}
 				);
+				//Connection Icon
+				$('#searchingIcon').addClass( "bounceOut animated" );
+				console.log(dropDown);
+				$('#searchingIcon').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+					function(){
+						$('#searchingIcon').css("opacity", "0");
+						$('#searchingIcon').removeClass( "bounceOut animated" );		
+					}
+				);
+				
+				
+				
+				
 			};
 			dropDown = !dropDown;
 		});

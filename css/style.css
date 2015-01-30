@@ -126,3 +126,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     height: 40px;
     overflow: auto;
 }
+
+#searchingIcon{
+	opacity: 0;
+	margin:auto;
+	width:100px;
+	height: 100px;
+	z-index:-1;
+	background-color: green;
+	position: relative;
+	
+}
