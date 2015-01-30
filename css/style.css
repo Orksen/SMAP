@@ -86,7 +86,7 @@ form {
 	width: 200px;
 	border-radius: 50%;
 	margin:auto;
-	
+	position: relative;
 	background-color: red;
 }
 #isConnectedBackground{
@@ -129,11 +129,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 #searchingIcon{
 	opacity: 0;
-	margin:auto;
+	margin-left:-50px;
+	left: 50%;
+	top: 80px;
+	pointer-events:none;
 	width:100px;
 	height: 100px;
-	z-index:-1;
-	background-color: green;
-	position: relative;
+	z-index:1;
+	
+	position: absolute;
+	background-image: url("../img/searchingIcon.svg");
+	background-position: center center;
+	background-size: cover;
+	
 	
 }

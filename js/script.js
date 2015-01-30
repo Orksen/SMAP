@@ -24,45 +24,25 @@ $(document).ready(function() {
 	
 	
 	function store(){
+		
 		//Name
     	var name = document.getElementById("name");
 		localStorage.setItem("name", name.value);
 		var storedName = localStorage.getItem("name");	
 		$( ".name" ).empty();
-		$( ".name" ).append( "<h3>"+ storedName + "</h3>" );
-		$( ".name" ).reload();
+		$( ".name" ).append(storedName);
 		alert("name klappt");
+		
 		//Number
 		var number = document.getElementById("number");
 		localStorage.setItem("number", number.value);
 		var storedNumber = localStorage.getItem("number");	
 		$( ".number" ).empty();
 		$( ".number" ).append(storedNumber);
-		$( ".number" ).reload();
 		alert("nummer klappt");
 		alert("Hey, " + storedName + "mit der Nummer " + storedNumber + "! Willkommen bei SMAP!");
 		
     }
-	
-
-	
-/*$(document).on("click","#settingsbutton", function(){
-		//askforprofile();	
-		var storedName = localStorage.getItem("name");
-		$( ".name" ).remove();
-		$( ".name" ).append( "<h3>"+ storedName + "</h3>" );
-
-		alert("profile loaded");
-
-	});*/
-	
-/*function askforprofile(){
-    	
-		var storedName = localStorage.getItem("name");
-		$( ".name" ).append( "<h3>"+ storedName + "</h3>" );
-		
-    }
-*/
 	
 	
 	
@@ -116,8 +96,12 @@ $(document).ready(function() {
 			dropDown = !dropDown;
 		});
 		
-		var storedName = localStorage.getItem("name");
-		$( ".name" ).append( "<h3>"+ storedName + "</h3>" );
+		storedName = localStorage.getItem("name");
+		$( ".name" ).append(storedName);
+		storedNumber = localStorage.getItem("number");
+		$( ".number" ).append(storedNumber);
+		
+		
 		
 		
 });
