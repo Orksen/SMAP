@@ -1,0 +1,128 @@
+/*.fadein {
+  opacity: 1;
+  -webkit-transition: opacity 1s ease-in;
+}
+
+.fadeout {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-out;
+}
+
+textarea {
+    font: 16px "Source Sans", helvetica, arial, sans-serif;
+    font-weight: 200;
+    display: block;
+    -webkit-border-radius: 6px;
+    width: 100%;
+    height: 140px;
+}
+
+#connection {
+    margin-bottom: 40px;
+    text-align:center;
+}
+
+#chat {
+    display:none;
+    margin: 20px;
+}
+
+#sendButton {
+    margin-top: 4px;
+}
+
+#message {
+    max-width: 185px;
+}
+
+select {
+    min-width: 200px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+*/
+
+#home{
+	background-color: #fff;
+}
+.ui-content{
+	padding-top: 0;
+}
+
+
+.tutorialButton{
+	width: -10px !important;
+    height: 15px !important;
+    border-radius: 50% !important;
+}
+
+.profilePicture{
+	width: 30%;
+	border-radius: 50%;
+	margin: auto;
+	background-color: #f2f2f2;
+}
+
+.profileContent{
+	text-align: center;
+}
+
+.mobileNumber{
+	color: grey;
+}
+
+.statisticButton{
+	background-color: #0083e6;
+	width:30%;
+	margin: auto;
+	color: #fff;
+	text-shadow: none;
+}
+
+#isConnected{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	margin:auto;
+	
+	background-color: red;
+}
+#isConnectedBackground{
+	background-color: #fff;
+	z-index: 1;
+	position:relative;
+	padding-top: 30px;
+}
+
+#connectionPanel{
+	opacity: 0;
+}
+
+.gradient{
+	width: 100%;
+	height:100px;
+	position: relative;
+	z-index: 2;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.5) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(255,255,255,0.75)), color-stop(100%,rgba(255,255,255,0.5))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,0.5) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,0.5) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,0.5) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,0.5) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+#home {
+-webkit-backface-visibility: hidden;
+}
+
+#result {
+    margin: 10px;
+    background: #eee;
+    padding: 10px;
+    height: 40px;
+    overflow: auto;
+}
