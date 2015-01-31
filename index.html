@@ -18,27 +18,26 @@
 		
 	</head>
 	<body>
+		
+		
+		
 		<!-- Welcome Page mit Profilerstellung -->
-		<div data-role="page" class="page" id="welcome">
+		<div data-role="page" id="createUser">
    			
 			<div class="ui-content">
-				
+			<img src="img/smapLogo.svg" />
 			<h1> SAVE MY ASS PLEASE </h1>	     
 				<form action="" method="post">
 					<input type="text" name="name" id="name" maxlength="20" placeholder="Name"/> <br/>
 					<input type="number" name="number" id="number" maxlength="20" placeholder="Nummer"/> <br/>
-					<a href="#home" data-icon="tag" data-transition="slide" data-transition="slide" class="ui-btn-active ui-state-persist"><button id="submitButton" type="button">Speichern</button></a>
-				</form>						
-			</div>			
+					<a href="#home" data-icon="tag" data-transition="fade" data-transition="slide" class="ui-btn-active ui-state-persist"><button id="submitButton" type="button">Speichern</button></a>
+				</form>					
+			</div>		
 		</div>
-
 		
-		
-		
-		
-		
-		
-		
+		<div id="welcome">
+			<img src="img/smapLogo.svg" />
+		</div>
 		<!--Home-Page -->
 		<div data-role="page" class="page" id="home">
    			<div data-role="header" data-id="header" data-position="fixed" class="ui-state-persist header">
@@ -57,7 +56,7 @@
 				</div>
 				
 			</div>
-			<div data-role="footer" data-id="footer" data-position="fixed" class="ui-state-persist footer">
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="a" class="ui-state-persist footer">
 				<div data-role="navbar" id="settingsbutton">
 					<ul>
 						<li><a href="#home" data-icon="tag" data-transition="slide" data-transition="slide" class="ui-btn-active ui-state-persist">Start</a></li>
@@ -83,7 +82,7 @@
 				<h2 class="number"></h2>
 				<h3 class="statisticButton">Statistik</h3>
 			</div>
-			<div data-role="footer" data-id="footer" data-position="fixed" class="ui-state-persist footer">
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="a" class="ui-state-persist footer">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="tag" data-transition="slide" data-transition="slide" data-direction="reverse">Start</a></li>
@@ -155,7 +154,7 @@
 		            app.initialize();
 		        </script>
 				</div>
-			<div data-role="footer" data-id="footer" data-position="fixed" class="ui-state-persist footer">
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="a" class="ui-state-persist footer">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="tag" data-transition="slide" data-transition="slide" data-direction="reverse">Start</a></li>
@@ -176,7 +175,7 @@
 			<div class="ui-content">
 		
 			</div>
-			<div data-role="footer" data-id="footer" data-position="fixed" class="ui-state-persist footer">
+			<div data-role="footer" data-id="footer" data-position="fixed"  data-theme="a" class="ui-state-persist footer">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="tag" data-transition="slide" data-transition="slide" data-direction="reverse">Start</a></li>
@@ -197,7 +196,7 @@
 			<div class="ui-content">
 				<h1>HIIII, DIIRK!</h1>
 			</div>
-			<div data-role="footer" data-id="footer" data-position="fixed" class="ui-state-persist footer">
+			<div data-role="footer" data-id="footer" data-position="fixed" data-theme="a" class="ui-state-persist footer">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="tag" data-transition="slide" data-transition="slide" data-direction="reverse">Start</a></li>

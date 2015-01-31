@@ -81,6 +81,7 @@
 
 #connectionPanel{
 	opacity: 0;
+	-webkit-animation-duration: 0.5s;
 }
 
 .gradient{
@@ -120,8 +121,32 @@
 	position: absolute;
 	background-image: url("../img/searchingIcon.svg");
 	background-position: center center;
-	background-size: cover;
-	
-	
+	background-size: cover;	
 }
 
+#welcome{
+	z-index: 2000;
+	background-color: #22313d;
+	position: fixed;
+	height: 1000px;
+	width: 100%;
+}
+#welcome img{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: 72px;
+	position: relative;
+}
+
+#createUser img{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: 72px;
+	position: relative;
+}

@@ -2,6 +2,8 @@ dropDown = false;
 
 $(document).ready(function() {
 	
+	$('#welcome').delay(2000).fadeOut('slow');
+	
 	//alert(storedName);
 	function circleRed(){
 		if(connectionStatus == "Disconnected")
@@ -19,7 +21,7 @@ $(document).ready(function() {
 	}
 	
 	$(document).on("click","#submitButton", function(){
-		store();	
+		store();
 	});
 	
 	
@@ -31,7 +33,6 @@ $(document).ready(function() {
 		var storedName = localStorage.getItem("name");	
 		$( ".name" ).empty();
 		$( ".name" ).append(storedName);
-		alert("name klappt");
 		
 		//Number
 		var number = document.getElementById("number");
@@ -39,7 +40,6 @@ $(document).ready(function() {
 		var storedNumber = localStorage.getItem("number");	
 		$( ".number" ).empty();
 		$( ".number" ).append(storedNumber);
-		alert("nummer klappt");
 		alert("Hey, " + storedName + "mit der Nummer " + storedNumber + "! Willkommen bei SMAP!");
 		
     }
