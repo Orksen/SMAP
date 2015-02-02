@@ -4,8 +4,7 @@ var connected = false;
 
 $(document).ready(function() {
 	
-	//Kontaktliste
-	document.addEventListener("deviceready", getContactList, false); 
+	
 	
 	
 	
@@ -169,6 +168,9 @@ function checkUser(){
     }
 }
 
+//Kontaktliste
+document.addEventListener("deviceready", getContactList, false); 
+	
 function getContactList()
 {
     var contactList = new ContactFindOptions(); 
