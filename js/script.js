@@ -1,10 +1,18 @@
-dropDown = false;
+var dropDown = false;
+var gesteErkannt = false;
+var connected = false;
 
 $(document).ready(function() {
 	
+	//Kontaktliste
+	document.addEventListener("deviceready", getContactList, false); 
+	
+	
+	
+	checkUser();
 	$('#welcome').delay(2000).fadeOut('slow');
 	
-	//alert(storedName);
+	/*//alert(storedName);
 	function circleRed(){
 		if(connectionStatus == "Disconnected")
 		{
@@ -18,7 +26,7 @@ $(document).ready(function() {
 		{
 			$('#isConnected').css('background-color', 'green');
 		}
-	}
+	}*/
 	
 	$(document).on("click","#submitButton", function(){
 		store();
@@ -40,15 +48,17 @@ $(document).ready(function() {
 		var storedNumber = localStorage.getItem("number");	
 		$( ".number" ).empty();
 		$( ".number" ).append(storedNumber);
-		alert("Hey, " + storedName + "mit der Nummer " + storedNumber + "! Willkommen bei SMAP!");
+		alert("Hey, " + storedName + " mit der Nummer " + storedNumber + "! Willkommen bei SMAP!");
 		
     }
+    
 	
 	
 	
 	$( "#isConnected" ).on('tap',
 		function(){
-			if(dropDown == false){
+			if(dropDown == false)
+			{
 				
 				//BT Panel
 				$('#connectionPanel').addClass( "bounceInDown animated" );	
@@ -76,7 +86,8 @@ $(document).ready(function() {
 					}
 				);
 			};
-			if(dropDown == true){
+			if(dropDown == true)
+			{
 				
 				//BT Panel
 				$('#connectionPanel').addClass( "bounceOutUp animated" );
@@ -104,21 +115,79 @@ $(document).ready(function() {
 						$('#searchingIcon').css("opacity", "0");
 						$('#searchingIcon').removeClass( "bounceOut animated" );		
 					}
-				);
-				
-				
-				
-				
+				);	
 			};
-			dropDown = !dropDown;
-		});
+		dropDown = !dropDown;
+	});
 		
-		storedName = localStorage.getItem("name");
-		$( ".name" ).append(storedName);
-		storedNumber = localStorage.getItem("number");
-		$( ".number" ).append(storedNumber);
+	storedName = localStorage.getItem("name");
+	$( ".name" ).append(storedName);
+	storedNumber = localStorage.getItem("number");
+	$( ".number" ).append(storedNumber);
+	
+	//Auslösen der Geste
+	$(document).on("tap","#gesteErkannt", function(){
+		gesteErkannt = !gesteErkannt;
+		console.log(gesteErkannt);
 		
+		if(gesteErkannt == true){
+			$('#gesteErkannt').css("color", "green");
+		} else{
+			$('#gesteErkannt').css("color", "red");
+		};
+	});
+	
+	
+	//BluetoothConnection
+	$(document).on("click","#bluetoothConnect", function(){
+		connected = !connected;
+		console.log(connected);
 		
-		
-		
+		if(connected == true){
+			$('#bluetoothConnect').css("color", "green");
+		} else{
+			$('#bluetoothConnect').css("color", "red");
+		};
+	});	
+	
+	//Clear Storage
+	$(document).on("click","#clearLocalStorage", function(){
+		localStorage.clear();
+		alert("Storage wurde gelöscht");
+	});	
+ 	
 });
+
+function checkUser(){
+    var userStatus = localStorage.getItem("name");
+    if(userStatus == null){
+	    alert("shit fuck, kein user da");
+    }else{
+	    alert("Yeah, User ist da!");
+	    $('#createUser').css("display", "none");
+	    window.location.href = "#home";
+    }
+}
+
+function getContactList()
+{
+    var contactList = new ContactFindOptions(); 
+    contactList.filter=""; 
+    contactList.multiple=true;
+    var fields = ["*"];  //"*" will return all contact fields
+    navigator.contacts.find(fields,  getContactFields, contactList );
+}
+    
+function getContactFields(contacts)
+{
+    for (var i=0; i<contacts.length; i++)
+    {
+       alert(contacts.length);
+       alert("Name:" + contacts[i].displayName + "\n" + "Birthday:"+ contacts[i].birthday)
+                    
+	   for (var j=0; j<contacts[i].phoneNumbers.length; j++)
+	   {
+	   		alert("Type: " + contacts[i].phoneNumbers[j].type + "\n" + "Value: "  + contacts[i].phoneNumbers[j].value );
+       }
+	}  
+};
