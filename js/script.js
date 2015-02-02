@@ -192,4 +192,4 @@ function getContactFields(contacts)
 	   		alert("Type: " + contacts[i].phoneNumbers[j].type + "\n" + "Value: "  + contacts[i].phoneNumbers[j].value );
        }
 	}  
-};
+}
