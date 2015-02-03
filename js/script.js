@@ -3,10 +3,7 @@ var gesteErkannt = false;
 var connected = false;
 
 $(document).ready(function() {
-	
-	
-	
-	
+	 
 	
 	checkUser();
 	$('#welcome').delay(2000).fadeOut('slow');
@@ -168,28 +165,34 @@ function checkUser(){
     }
 }
 
-//Kontaktliste
-document.addEventListener("deviceready", getContactList, false); 
-	
-function getContactList()
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady()
 {
-    var contactList = new ContactFindOptions(); 
-    contactList.filter=""; 
-    contactList.multiple=true;
-    var fields = ["*"];  //"*" will return all contact fields
-    navigator.contacts.find(fields,  getContactFields, contactList );
-}
-    
-function getContactFields(contacts)
-{
-    for (var i=0; i<contacts.length; i++)
+    function onSuccess(contacts)
     {
-       alert(contacts.length);
-       alert("Name:" + contacts[i].displayName + "\n" + "Birthday:"+ contacts[i].birthday)
-                    
-	   for (var j=0; j<contacts[i].phoneNumbers.length; j++)
-	   {
-	   		alert("Type: " + contacts[i].phoneNumbers[j].type + "\n" + "Value: "  + contacts[i].phoneNumbers[j].value );
-       }
-	}  
+    	alert('Found ' + contacts.length + ' contacts.');
+    	for (var i = 0; i < contacts.length; i++) {
+	    	for (var j=0; j<contacts[i].phoneNumbers.length; j++)
+	    	{
+				alert(contacts[i].phoneNumbers[0].value);
+			}
+
+	    }
+	    //alert(contacts.length.phoneNumbers[1].value)
+	};
+	
+	function onError(contactError) {
+	    alert('onError!');
+	};
+	
+	// find all contacts with 'Bob' in any name field
+	var options      = new ContactFindOptions();
+	options.filter   = "Smap";
+	options.multiple = true;
+	options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers];
+	//var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+	var fields       = ["note", "phoneNumbers", "name", "displayName"];
+	navigator.contacts.find(fields, onSuccess, onError, options);
+
 }
